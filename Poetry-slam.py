@@ -1,6 +1,8 @@
+filename = "poem.txt"
 def get_file_lines(filename):
     poem = open(filename, 'r')
     return poem.readlines()
+def lines_printed_backwards(lines_list):
+    print(lines_list[::-1])
 
-filename = "poem.txt"
-print(get_file_lines(filename))
+lines_printed_backwards(get_file_lines(filename))
