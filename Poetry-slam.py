@@ -1,14 +1,14 @@
 filename = "poem.txt"
 def get_file_lines(filename):
     read_poem = open(filename, 'r')
-    return read_poem.readlines()
+    return read_poem.readlines()        #this function has outputted a list version of the text file! We can now reference it in following functions
 
 #print(get_file_lines(filename))     #this is to test the return output of the get_file_lines
 
 print("\u0332".join("THIS IS THE POEM BACKWARDS"))      #used the unicode \u0332 to underline the following text, the following text is the intro to the function.
 def lines_printed_backwards(lines_list):
     lines_list = lines_list[::-1]
-    for line in lines_list:
+    for line in lines_list:         #putting the print into a for loop allows the list to be printed in a nicer format, line by line
         print(line)
 
 lines_printed_backwards(get_file_lines(filename))       #this is to call the backwards print function using the return of the original function as the parameter
@@ -18,7 +18,7 @@ print("\u0332".join("THIS IS THE POEM IN RANDOM ORDER"))        #used the unicod
 import random
 def lines_printed_random(lines_list):
     random.shuffle(lines_list)      #random.shuffle preserves the amount of lines in the original list and does not introduce repeated lines
-    for line in lines_list:
+    for line in lines_list:         #putting the print into a for loop allows the list to be printed in a nicer format, line by line
        print(line)
 
 lines_printed_random(get_file_lines(filename))
