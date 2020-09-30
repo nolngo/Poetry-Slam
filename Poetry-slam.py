@@ -3,16 +3,18 @@ def get_file_lines(filename):
     read_poem = open(filename, 'r')
     return read_poem.readlines()
 
-print(get_file_lines(filename))     #this is to test the return output of the get_file_lines
+#print(get_file_lines(filename))     #this is to test the return output of the get_file_lines
 
+print("\u0332".join("THIS IS THE POEM BACKWARDS"))      #used the unicode \u0332 to underline the following text, the following text is the intro to the function.
 def lines_printed_backwards(lines_list):
     lines_list = lines_list[::-1]
     for line in lines_list:
         print(line)
 
-
 lines_printed_backwards(get_file_lines(filename))       #this is to call the backwards print function using the return of the original function as the parameter
 
+
+print("\u0332".join("THIS IS THE POEM IN RANDOM ORDER"))        #used the unicode \u0332 to underline the following text, the following text is the intro to the function.
 import random
 def lines_printed_random(lines_list):
     random.shuffle(lines_list)      #random.shuffle preserves the amount of lines in the original list and does not introduce repeated lines
@@ -21,12 +23,14 @@ def lines_printed_random(lines_list):
 
 lines_printed_random(get_file_lines(filename))
 
+
+print("\u0332".join("THIS IS THE POEM IN CUSTOM ORDER"))        #used the unicode \u0332 to underline the following text, the following text is the intro to the function.
 def lines_printed_custom(lines_list):
-    print("These lines begin with B or T")
+    print("These lines begin with B or T")      #this for loop will identify and print only list items starting with B, T, or N
     for line in lines_list:
         if line[0] == "B" or line[0] == "T" or line[0] == "N":
             print(line)
-    print("These lines do not begin with B")
+    print("These lines do not begin with B")       #this for look is much like an else function except i wanted to put a space in between them and put the message
     for line in lines_list:
         if line[0] != "B" or line[0] != "T" or line[0] != "N":
             print(line)
