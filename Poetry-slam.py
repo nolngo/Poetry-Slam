@@ -7,8 +7,8 @@ def get_file_lines(filename):
 print("\u0332".join("THIS IS THE POEM BACKWARDS"))      #used the unicode \u0332 to underline the following text, the following text is the intro to the function.
 def lines_printed_backwards(lines_list):
     lines_list = lines_list[::-1]       #modified line_list to read backwards using a slice
-    for line in lines_list:         #putting the print into a for loop allows the list to be printed in a nicer format, line by line
-        print(line)
+    for (i,line) in enumerate(lines_list):         #putting the print into a for loop allows the list to be printed in a nicer format, line by line
+        print(len(lines_list)-i, line)
 
 lines_printed_backwards(get_file_lines(filename))       #this is to call the backwards print function using the return of the original function as the parameter
 
